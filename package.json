@@ -9,6 +9,8 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "clean": "nuxt cleanup",
+    "nuxt:upgrade": "npx nuxt upgrade --dedupe",
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
@@ -20,7 +22,7 @@
     "@takumi-rs/core": "^1.8.7",
     "@vueuse/nuxt": "^14.3.0",
     "motion-v": "^2.3.0",
-    "nuxt": "^4.4.8",
+    "nuxt": "4.4.8",
     "nuxt-og-image": "^6.7.2",
     "tailwindcss": "^4.3.2"
   },
