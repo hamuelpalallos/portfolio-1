@@ -1,9 +1,9 @@
 ---
-title: Fixing Nuxt HMR in a Coolify Code-Server: A Debugging Journey
+title: 'Fixing Nuxt HMR in a Coolify Code-Server: A Debugging Journey'
 description: A detailed walkthrough of troubleshooting and fixing Hot Module Replacement issues when running Nuxt in a self-hosted code-server environment.
 date: 2025-07-25
 image: https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80
-minRead: 8
+minRead: 10
 author:
   name: Hamuel Palallos
   description: Senior Software Engineer
@@ -121,25 +121,68 @@ Since these are flat, single-level subdomains, they're covered automatically by 
 export default defineNuxtConfig({
   devServer: {
     host: '0.0.0.0',
-    port: 3000,
+    port: 3000
+  },
+
+  compatibilityDate: '2026-06-30',
+
+  nitro: {
+    prerender: {
+      routes: [
+        '/'
+      ],
+      crawlLinks: true
+    }
   },
 
   vite: {
+    optimizeDeps: {
+      include: [
+        '@vue/devtools-core',
+        '@vue/devtools-kit'
+      ]
+    },
     server: {
+      // Tunneled dev setup: the browser reaches this dev server through a
+      // Cloudflare Tunnel at https://nuxt-dev.softwarelabs.dev (TLS terminated
+      // at the edge on 443, dev server itself is plain HTTP on 0.0.0.0:3000).
       host: '0.0.0.0',
+      // `strictPort: true` so the listening port is deterministic. Per Vite docs
+      // this also silences the HMR WebSocket "direct connection fallback" error.
       strictPort: true,
       hmr: {
         protocol: 'wss',
-        host: 'nuxt-dev.yourdomain.com',
-        clientPort: 443,
+        host: 'nuxt-dev.softwarelabs.dev',
+        clientPort: 443
       },
-      allowedHosts: ['nuxt-dev.yourdomain.com'],
-    },
-  },
+      allowedHosts: ['nuxt-dev.softwarelabs.dev'],
+      // IMPORTANT: Cloudflare's edge cache MUST be bypassed for the dev hostname,
+      // otherwise it serves stale _nuxt/*.js / entry.js chunks (or wrong
+      // Content-Type) after the dev server restarts and the ?v= hash changes.
+      // That is the documented #1 cause of:
+      //   "Failed to fetch dynamically imported module: .../entry.js"
+      //   "Expected a JavaScript-or-Wasm module script but the server responded
+      //    with a MIME type of text/css"
+      // (nuxt/nuxt#26565). In Cloudflare Zero Trust, set a Cache Rule / Page Rule
+      // to bypass cache for the dev hostname, or set it to "DNS only" (grey cloud).
+      // The header below is the in-app mitigation; it is not a substitute for
+      // disabling edge caching on the dev hostname.
+      headers: {
+        'Cache-Control': 'no-store, must-revalidate'
+      }
+    }
+  }
 })
 ```
 
-The two lines that actually solved the original bug were `hmr.host` and `hmr.clientPort: 443` — telling the HMR client explicitly where to reconnect, instead of letting it guess.
+The two lines that actually solved the original HMR bug were `hmr.host` and `hmr.clientPort: 443` — telling the HMR client explicitly where to reconnect, instead of letting it guess.
+
+But getting HMR *connected* only exposed a second, sneakier problem I'd been blaming on Vite: **Cloudflare's edge cache.** After every dev server restart, the browser would sometimes load a stale `entry.js` (or get a chunk back with the wrong `Content-Type`) and throw:
+
+> `Failed to fetch dynamically imported module: .../entry.js`
+> `Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of text/css`
+
+That's [nuxt/nuxt#26565](https://github.com/nuxt/nuxt/issues/26565) — and it's not a Nuxt bug, it's the CDN serving yesterday's hashed chunk as if it were current. The `Cache-Control: no-store, must-revalidate` header above is the in-app mitigation, but the real fix is at the edge: in Cloudflare Zero Trust, set a Cache Rule (or Page Rule) to **bypass cache for the dev hostname**, or flip the DNS record to **grey cloud (DNS only)**. Once the cache stopped serving stale chunks, restarts were instantly clean.
 
 ### Step 5: Removing the old workarounds
 
@@ -159,5 +202,6 @@ With direct routing through the tunnel and explicit HMR config, file edits now h
 2. **HMR needs to be told, not left to guess.** `hmr.host`, `hmr.protocol`, and `hmr.clientPort` in Vite's config exist specifically for tunneled/proxied setups like this.
 3. **Containers don't share `localhost`.** Cross-container or container-to-host access needs the actual host/service address, not `localhost`.
 4. **Reuse existing infrastructure where you can.** Once I stopped trying to add new proxy layers (code-server's built-in proxy, then ngrok) and instead used the Cloudflare Tunnel I already had running, the whole problem became much simpler.
+5. **Behind a CDN, "stale module" errors are usually a cache bug, not a bundler bug.** `Failed to fetch dynamically imported module` / wrong-MIME errors after a restart almost always mean the edge (Cloudflare) is serving the old hashed `entry.js`. Bypass cache on the dev hostname (or go DNS-only) — the `Cache-Control: no-store` header is a mitigation, not a substitute.
 
 Thanks for reading — if you've run into similar HMR issues with a self-hosted dev environment, I'd love to hear how you solved it.

@@ -66,7 +66,8 @@ export default defineNuxtConfig({
       // The header below is the in-app mitigation; it is not a substitute for
       // disabling edge caching on the dev hostname.
       headers: {
-        'Cache-Control': 'no-store, must-revalidate'
+        // 'Cache-Control': 'no-store, must-revalidate'
+        'Cache-Control': 'must-revalidate'
       }
     }
   },
