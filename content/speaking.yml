@@ -1,48 +1,31 @@
 title: Talks & Workshops
-description: Explore talks and workshops I've given on UX design, front-end development, and building better digital products.
+description: Sharing knowledge through technical talks, workshops, and guest lectures on modern web development, mobile applications, and software architecture.
 links:
   - label: Invite me to speak
+    to: "mailto:hamuel@softwarelabs.dev"
     size: md
 events:
   - category: Conference
-    title: "Bridging the Gap: Design Systems for Designer-Developer Collaboration"
-    date: "2024-10-26"
-    location: "VueConf US, Miami, FL"
-    url: "#"
-  - category: Conference
-    title: "Intuitive Interfaces: Applying UX Principles in Nuxt.js Applications"
-    date: "2024-06-15"
-    location: "Nuxt Nation, Online"
-    url: "#"
-  - category: Conference
-    title: "Accessibility First: Building Inclusive Web Apps"
-    date: "2023-11-08"
-    location: "Boston Web Performance Meetup, Boston, MA"
+    title: "Shipping Full-Stack Products as a Solo Developer"
+    date: "2023-06-01"
+    location: "DevFest Dumaguete 2023, Dumaguete City"
   - category: Live talk
-    title: "Mastering Component Design in Figma & Vue"
-    date: "2024-08-20"
-    location: "Design & Dev Boston Meetup, Boston, MA"
-    url: "#"
+    title: "Building Scalable Web Applications with Vue.js and Nuxt.js"
+    date: "2024-08-01"
+    location: "Silliman University Guest Lecture"
   - category: Live talk
-    title: "From Wireframe to Web: A Practical Front-End Workflow"
-    date: "2024-03-05"
-    location: "Internal Workshop @ PreviousCompany Inc."
+    title: "Introduction to Cross-Platform Mobile Development with Flutter"
+    date: "2024-03-01"
+    location: "Silliman University Guest Lecture"
   - category: Live talk
-    title: "The Power of User Research in Product Development"
-    date: "2023-09-12"
-    location: "Boston University Guest Lecture, Boston, MA"
-  - category: Podcast
-    title: "Designing for Developers: A UX Perspective"
-    date: "2024-07-18"
-    location: "Syntax.fm (Guest)"
-    url: "#"
-  - category: Podcast
-    title: "The Future of Front-End Frameworks & Design Tooling"
-    date: "2024-01-30"
-    location: "Design Details Podcast (Guest)"
-    url: "#"
-  - category: Podcast
-    title: "Building a Career in UX/UI & Development"
-    date: "2023-05-22"
-    location: "TechForward Boston Podcast"
-    url: "#"
+    title: "Frontend Architecture Patterns for Startup Products"
+    date: "2024-06-01"
+    location: "Internal Workshop @ Tripket PH"
+  - category: Live talk
+    title: "Firebase and Cloud Firestore: Real-Time Data for Web and Mobile"
+    date: "2023-11-01"
+    location: "Dumaguete Tech Meetup"
+  - category: Live talk
+    title: "Database Design and Backend Architecture with Laravel"
+    date: "2023-09-01"
+    location: "Silliman University Guest Lecture"

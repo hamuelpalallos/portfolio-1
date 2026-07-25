@@ -1,0 +1,8 @@
+title: Curriculum Vitae
+description: My professional experience, education, and skills at a glance.
+links:
+  - label: Download PDF
+    icon: i-lucide-download
+    to: /cv.pdf
+    target: _blank
+    color: neutral

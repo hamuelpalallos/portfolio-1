@@ -1,0 +1,11 @@
+title: Personal Portfolio
+description: My personal portfolio website built with Nuxt 4, Nuxt UI, and TypeScript. Features responsive design, dark mode, optimized performance, and content-driven architecture with fast page loads.
+url: https://portfolio.softwarelabs.dev
+tags:
+  - Nuxt 4
+  - Nuxt UI
+  - TypeScript
+  - Tailwind CSS
+  - Portfolio
+date: 2025-01-01
+image: https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80

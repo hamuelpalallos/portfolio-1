@@ -1,0 +1,11 @@
+title: Tripket PH Mobile
+description: Cross-platform mobile application for Tripket PH built with Flutter and Dart. Integrated with Firebase for real-time data synchronization, push notifications, and cloud storage. Native-like performance on iOS and Android.
+url: https://tripket.ph
+tags:
+  - Flutter
+  - Dart
+  - Firebase
+  - Mobile Development
+  - Cross-platform
+date: 2023-01-01
+image: https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80

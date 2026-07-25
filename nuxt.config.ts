@@ -14,20 +14,11 @@ export default defineNuxtConfig({
     enabled: true
   },
 
-  // for nuxt v4.5.0 and above only
-  // builder: 'rspack',
-
   css: ['~/assets/css/main.css'],
 
-  // content: {
-  //   experimental: {
-  //     sqliteConnector: 'native'
-  //   }
-  // },
-
   devServer: {
-    host: '0.0.0.0', // bind to all interfaces inside the container, not just loopback
-    port: 3000 // internal port — stays 3000, host maps 3300 -> this
+    host: '0.0.0.0',
+    port: 3000
   },
 
   compatibilityDate: '2026-06-30',
@@ -42,14 +33,41 @@ export default defineNuxtConfig({
   },
 
   vite: {
+    optimizeDeps: {
+      include: [
+        '@vue/devtools-core',
+        '@vue/devtools-kit'
+      ]
+    },
     server: {
+      // Tunneled dev setup: the browser reaches this dev server through a
+      // Cloudflare Tunnel at https://nuxt-dev.softwarelabs.dev (TLS terminated
+      // at the edge on 443, dev server itself is plain HTTP on 0.0.0.0:3000).
+      // See content/blog/fixing-nuxt-hmr-coolify-code-server.md for the journey.
+      host: '0.0.0.0',
+      // `strictPort: true` so the listening port is deterministic. Per Vite docs
+      // this also silences the HMR WebSocket "direct connection fallback" error.
       strictPort: true,
       hmr: {
-        protocol: 'wss', // tunnel terminates TLS, so client connects over wss
-        host: 'nuxt-dev.softwarelabs.dev', // public hostname the browser actually loads from
-        port: 443 // public port (Cloudflare always fronts on 443)
+        protocol: 'wss',
+        host: 'nuxt-dev.softwarelabs.dev',
+        clientPort: 443
       },
-      allowedHosts: ['nuxt-dev.softwarelabs.dev'] // Vite 5.4+/6 reject unrecognized Host headers by default
+      allowedHosts: ['nuxt-dev.softwarelabs.dev'],
+      // IMPORTANT: Cloudflare's edge cache MUST be bypassed for the dev hostname,
+      // otherwise it serves stale _nuxt/*.js / entry.js chunks (or wrong
+      // Content-Type) after the dev server restarts and the ?v= hash changes.
+      // That is the documented #1 cause of:
+      //   "Failed to fetch dynamically imported module: .../entry.js"
+      //   "Expected a JavaScript-or-Wasm module script but the server responded
+      //    with a MIME type of text/css"
+      // (nuxt/nuxt#26565). In Cloudflare Zero Trust, set a Cache Rule / Page Rule
+      // to bypass cache for the dev hostname, or set it to "DNS only" (grey cloud).
+      // The header below is the in-app mitigation; it is not a substitute for
+      // disabling edge caching on the dev hostname.
+      headers: {
+        'Cache-Control': 'no-store, must-revalidate'
+      }
     }
   },
 

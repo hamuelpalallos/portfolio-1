@@ -1,0 +1,21 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "nuxt": {
+      "type": "remote",
+      "url": "https://nuxt.com/mcp",
+      "enabled": true
+    },
+    "nuxt-ui": {
+      "type": "remote",
+      "url": "https://ui.nuxt.com/mcp",
+      "enabled": true
+    }
+  },
+  "skills": {
+    "urls": [
+      "https://github.com/nuxt/ui/tree/v4/skills/nuxt-ui",
+      "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"
+    ]
+  }
+}

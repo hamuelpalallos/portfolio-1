@@ -12,13 +12,14 @@ useHead({
   link: [
     { rel: 'icon', href: '/favicon.ico' }
   ],
+
   htmlAttrs: {
     lang: 'en'
   }
 })
 
 useSeoMeta({
-  titleTemplate: '%s - Nuxt Portfolio Template',
+  titleTemplate: '%s - Hamuel Palallos',
   twitterCard: 'summary_large_image'
 })
 

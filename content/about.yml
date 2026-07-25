@@ -1,27 +1,49 @@
 title: About Me
-description: Learn more about my journey as a Boston-based UX/UI Designer & Front-End Developer, my design philosophy, and my passion for crafting intuitive digital experiences.
+description: A Senior Software Engineer from the Philippines who's been building production software since 2018.
 content: |
-  Hi, I'm **Emma Thompson**, a UX/UI Designer and Front-End Developer based right here in Boston. For the past six years, I've been immersed in the world of digital product creation, focusing on building experiences that are not just functional, but genuinely intuitive and engaging for users.
+  Hi, I'm **Hamuel Palallos**, a Senior Software Engineer from the Philippines. For the past several years, I've been immersed in the world of software development, focusing on building robust full-stack solutions that scale. My journey has taken me from Laravel-based backend systems to modern Vue.js/Nuxt.js applications and cross-platform mobile development with Flutter.
 
-  My path started at **Boston University**, where I earned a degree in Interactive Design. It was there I discovered my dual passion for the visual language of design and the logical puzzle of code. Since then, I've honed my skills in both areas, believing that the best digital products are born from a deep understanding of both aesthetics and implementation.
+  My path started with a deep curiosity about how software works and how it can solve real-world problems. Over the years, I've had the opportunity to work on diverse projects ranging from real-time tabulation systems for major events to comprehensive inventory management platforms and mobile applications that serve thousands of users.
 
-  ### My Design Philosophy
+  ### Where I've Worked
 
-  My design philosophy is rooted in **empathy** and **problem-solving**. I believe great design starts with understanding the 'why' – the user's needs, motivations, and pain points. I use research, iterative prototyping (often with tools like Figma), and user testing to ensure the solutions I build are truly effective.
+  I'm currently a Senior Software Engineer at **Tripket PH**, where I lead development efforts on dashboard systems, mobile applications, and backend infrastructure. Before that, I worked as a Software Developer at **Asbir Tech**, building enterprise applications and learning the fundamentals of scalable architecture.
 
-  I strive to create interfaces that feel effortless, where functionality and beauty work hand-in-hand. Whether I'm crafting pixel-perfect UIs or writing clean Vue.js/Nuxt.js code, my focus is always on creating value for the end-user.
+  Throughout my career, I've had the privilege of working with startups and established companies alike, each experience teaching me valuable lessons about building software that matters. I've worked on everything from game development with Unity to complex inventory systems that track thousands of products in real-time.
 
-  ### What Drives Me
+  ### How I Work
 
-  What keeps me excited about this work is the constant learning and the challenge of translating complex ideas into simple, elegant solutions. There's nothing more rewarding than seeing a design come to life and knowing it's making someone's digital interaction easier or more enjoyable.
+  My approach to software development is rooted in pragmatism and continuous learning. I believe in choosing the right tools for the job while maintaining deep expertise in my core technologies. I enjoy tackling complex technical challenges and breaking them down into manageable, solvable components.
 
-  ### Beyond the Screen
+  I value clean code, thoughtful architecture, and systems that are built to last. But I also believe that the best software is software that actually gets used and solves real problems. I strive to balance technical excellence with practical business outcomes.
 
-  When I'm not designing or coding, you might find me exploring Boston's latest coffee shops, hiking nearby trails, or occasionally contributing to open-source projects.
+  ### My Tech Stack
 
-  Thanks for stopping by. Feel free to browse my [projects](/projects) or [get in touch](/#contact) if you'd like to collaborate!
+  My primary technologies include **Vue.js** and **Nuxt.js** for frontend development, **Flutter** and **Dart** for cross-platform mobile apps, and **Laravel** for backend APIs. I work with **MySQL** and **MongoDB** for databases, and I have experience with cloud platforms like **Azure** and services like **Firebase**.
+
+  I'm also passionate about modern development practices including CI/CD pipelines, containerization with Docker, and automated testing. I believe that good tooling and processes are essential for building and maintaining software at scale.
+
+  ### AI & Intelligent Tooling
+
+  I'm deeply interested in how AI tools can enhance development productivity without replacing the core problem-solving skills that make developers valuable. I use AI assistants to accelerate routine tasks while maintaining strong fundamentals and critical thinking.
+
+  I believe that AI should augment human capabilities, not replace them. The best developers will be those who can effectively leverage AI tools while understanding the underlying technology deeply enough to make informed decisions and solve complex problems.
+
+  ### Self-Hosted Infrastructure
+
+  I'm a strong believer in self-hosting and maintaining control over the tools and infrastructure I use. I have experience setting up private infrastructure for development and production environments, including private Git repositories, CI/CD systems, and monitoring solutions.
+
+  Self-hosting has taught me valuable lessons about system administration, security, and the importance of understanding the full stack from infrastructure to application code. It's an approach that I continue to advocate for in my work and personal projects.
+
+  ### Always Exploring
+
+  Technology is constantly evolving, and I'm always exploring new tools, frameworks, and approaches. Whether it's experimenting with new frontend frameworks, diving deeper into mobile development, or learning about emerging technologies, I believe that staying curious is essential for long-term growth.
+
+  When I'm not coding, you might find me contributing to open-source projects, writing about software development, or sharing knowledge through talks and workshops. I believe in the importance of giving back to the community and helping others grow as developers.
+
+  Thanks for stopping by. Feel free to browse my [projects](/projects), read my [blog posts](/blog), or [get in touch](mailto:hamuel@softwarelabs.dev) if you'd like to collaborate!
 images:
-  - src: https://images.unsplash.com/photo-1744877478622-a78c7a3336f6?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-    alt: My coffee workspace
-  - src: https://images.unsplash.com/photo-1744429523595-2c06b8611242?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-    alt: My trip to Tokyo
+  - src: https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80
+    alt: Development workspace
+  - src: https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80
+    alt: Tokyo cityscape

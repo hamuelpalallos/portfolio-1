@@ -6,7 +6,7 @@ export default defineAppConfig({
       alt: 'My profile picture'
     },
     meetingLink: 'https://cal.com/',
-    email: 'ui-pro@nuxt.com',
+    email: 'hamuel@softwarelabs.dev',
     available: true
   },
   ui: {
@@ -23,23 +23,22 @@ export default defineAppConfig({
     }
   },
   footer: {
-    credits: `Built with Nuxt UI • © ${new Date().getFullYear()}`,
+    credits: `Built with Nuxt UI • © ${new Date().getFullYear()} Hamuel Palallos`,
     colorMode: false,
     links: [{
-      'icon': 'i-simple-icons-discord',
-      'to': 'https://go.nuxt.com/discord',
-      'target': '_blank',
-      'aria-label': 'Nuxt on Discord'
-    }, {
-      'icon': 'i-simple-icons-x',
-      'to': 'https://go.nuxt.com/x',
-      'target': '_blank',
-      'aria-label': 'Nuxt on X'
-    }, {
       'icon': 'i-simple-icons-github',
-      'to': 'https://github.com/nuxt/ui',
+      'to': 'https://github.com/hamuelpalallos',
       'target': '_blank',
-      'aria-label': 'Nuxt UI on GitHub'
+      'aria-label': 'GitHub'
+    }, {
+      'icon': 'i-simple-icons-linkedin',
+      'to': 'https://linkedin.com/in/hamuelpalallos',
+      'target': '_blank',
+      'aria-label': 'LinkedIn'
+    }, {
+      'icon': 'i-lucide-mail',
+      'to': 'mailto:hamuel@softwarelabs.dev',
+      'aria-label': 'Email'
     }]
   }
 })
