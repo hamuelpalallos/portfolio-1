@@ -10,7 +10,9 @@ useHead({
     { key: 'theme-color', name: 'theme-color', content: color }
   ],
   link: [
-    { rel: 'icon', href: '/favicon.ico' }
+    { rel: 'icon', href: '/favicon.ico' },
+
+    { rel: 'javascript', href: '/_nuxt/@fs/config/workspace/projects/nuxt/folio/node_modules/nuxt/dist/app/entry.js?v=a888cab0' }
   ],
   htmlAttrs: {
     lang: 'en'
@@ -39,6 +41,13 @@ const [{ data: navigation }, { data: files }] = await Promise.all([
     transform: data => data.flat()
   })
 ])
+
+
+const testFunction = ()=>  {
+  
+  console.log('test')
+}
+
 </script>
 
 <template>
