@@ -5,7 +5,7 @@ export default withNuxt({
   rules: {
     '@typescript-eslint/no-explicit-any': 'off'
   },
-  ignorePatterns: [
-    'bun.lock',
+  ignores: [
+    'bun.lock'
   ]
 })

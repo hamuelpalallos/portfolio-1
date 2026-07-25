@@ -11,21 +11,21 @@ A personal portfolio site built on the **Nuxt UI Portfolio template** (fork of `
 
 ## Commands
 
-Always use **pnpm** (declared `packageManager: pnpm@11.13.1`; CI and README use pnpm).
+Always use **bun** (the project is bun-driven; `bun.lock` is the authoritative lockfile).
 
 ```bash
-pnpm install        # postinstall runs `nuxt prepare` (regenerates .nuxt/ types)
-pnpm dev            # dev server on http://localhost:3000
-pnpm build          # production build (prerenders '/' + crawlLinks, see nitro config)
-pnpm preview        # preview production build
-pnpm lint           # eslint .        (use `lint:fix` to autofix)
-pnpm typecheck      # nuxt typecheck   (vue-tsc; needs .nuxt/ generated first)
-pnpm clean          # nuxt cleanup     (removes .nuxt, .output, .data)
+bun install         # postinstall runs `nuxt prepare` (regenerates .nuxt/ types)
+bun run dev         # dev server on http://localhost:3000
+bun run build       # production build (prerenders '/' + crawlLinks, see nitro config)
+bun run preview     # preview production build
+bun run lint        # eslint .        (use `lint:fix` to autofix)
+bun run typecheck   # nuxt typecheck   (vue-tsc; needs .nuxt/ generated first)
+bun run clean       # nuxt cleanup     (removes .nuxt, .output, .data)
 ```
 
-Verification order before considering work done: **`pnpm lint` → `pnpm typecheck`**.
+Verification order before considering work done: **`bun run lint` → `bun run typecheck`**.
 
-> A `bun.lock` exists and is committed, but the project is pnpm-driven. Treat pnpm as authoritative; don't switch package managers. The lockfile is eslint-ignored.
+> A `pnpm-lock.yaml` may exist, but the project is bun-driven. Treat bun as authoritative; don't switch package managers.
 
 ## Architecture / layout (Nuxt 4 `app/` srcDir)
 
@@ -56,7 +56,7 @@ Collections in `content.config.ts`: `index` (homepage, `index.yml`), `projects` 
 
 ## Gotchas
 
-- **`postinstall` regenerates `.nuxt/`.** If types seem stale after a content/schema change, run `pnpm install` or `npx nuxt prepare`, then `pnpm typecheck`.
+- **`postinstall` regenerates `.nuxt/`.** If types seem stale after a content/schema change, run `bun install` or `npx nuxt prepare`, then `bun run typecheck`.
 - **`nuxt.config.ts` contains environment-specific dev-server/HMR config** (host `0.0.0.0`, `strictPort`, HMR pinned to `nuxt-dev.softwarelabs.dev` over wss/443, `allowedHosts`). This is for a tunneled dev environment; change it only if you understand the tunnel setup, otherwise local dev may fail to connect/HMR.
 - **`app/app.vue` has local modifications** that are not part of the upstream template: a hardcoded `<link rel="javascript" href="/_nuxt/@fs/.../entry.js?...">` pointing at an absolute local path, and a leftover unused `testFunction`. These are fragile / non-portable — prefer removing them unless intentionally kept.
 - OG images: `nuxt-og-image` with `zeroRuntime: true`; templates in `app/components/OgImage/` (`.takumi.vue`, uses `@takumi-rs/core`).
@@ -65,6 +65,6 @@ Collections in `content.config.ts`: `index` (homepage, `index.yml`), `projects` 
 
 ## Workflow
 
-- Branch: `main`. CI (`.github/workflows/ci.yml`, Node 22) runs `pnpm install` → `lint` → `typecheck` on every push.
+- Branch: `main`. CI (`.github/workflows/ci.yml`, Node 22) runs `bun install` → `lint` → `typecheck` on every push.
 - Dependencies are kept current via Renovate (`renovate.json`, extends `nuxt/renovate-config-nuxt`); `resolutions` updates are disabled.
 - Two remotes: `origin` = this fork, `upstream` = the template. Keep template-aligned where possible.
