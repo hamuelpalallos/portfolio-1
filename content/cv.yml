@@ -16,8 +16,18 @@ profile:
     github: github.com/hamuelpalallos
     linkedin: linkedin.com/in/hamuelpalallos
     location: San Miguel, Bacong, Neg. Or. PH
-summary: Senior Software Engineer with a dual specialty in modern web platforms (React, Next.js, Nuxt) and enterprise Oracle development (PL/SQL, Oracle APEX, Oracle DB). I architect high-performance frontends, design resilient backend systems, and build data-intensive enterprise applications — bridging the gap between modern UX and mission-critical enterprise data.
+summary: Senior Software Engineer with broad full-stack range — modern web and mobile platforms (React, Next.js, React Native, Nuxt), backend systems (Laravel/PHP, Node.js), and enterprise database engineering (Oracle, PostgreSQL). I architect resilient APIs, design scalable frontends, and ship production systems across web, mobile, and enterprise.
 experience:
+  - position: Fullstack Developer
+    company: Metrobank
+    period: 2026 - 2027
+    location: Philippines
+    description: Full-stack development across enterprise data layers and modern web frontends.
+    achievements:
+      - Engineered Oracle-backed modules using PL/SQL — stored procedures, packages, triggers, and tuned queries for high-volume transactional systems
+      - Modeled and optimized Oracle DB and PostgreSQL schemas; improved query performance through indexing and explain-plan analysis
+      - Built and consumed REST APIs on Node.js to bridge enterprise data layers with React.js frontends
+      - Delivered secure, auditable features end-to-end across database, API, and UI tiers
   - position: Senior Software Engineer
     company: Tripket PH
     period: 2022 - 2026
@@ -29,16 +39,16 @@ experience:
       - Developed cross-platform mobile apps with Flutter backed by Firebase real-time data
       - Owned backend performance and database design (PostgreSQL/MySQL) for reliability at scale
       - Established coding, security, and deployment standards; mentored engineers on React/Next.js best practices
-  - position: Software Developer (Oracle & Enterprise Applications)
+  - position: Full-Stack Developer
     company: Asbir Tech
     period: 2025 - Present
     location: Philippines
-    description: Developing enterprise applications with a focus on Oracle database engineering and modern web frontends.
+    description: Full-stack product development across Laravel backends and React/Next.js/React Native clients.
     achievements:
-      - Engineered Oracle-backed enterprise modules using PL/SQL — stored procedures, packages, triggers, and tuned queries for high-volume transactional systems
-      - Built internal business applications on Oracle APEX, delivering forms, reports, and dashboards rapidly
-      - Modeled and optimized Oracle DB schemas; improved query performance through indexing, partitioning, and explain-plan analysis
-      - Bridged Oracle data layers with modern React/Next.js frontends via REST APIs
+      - Built Laravel/PHP backends and REST APIs powering web and mobile clients, with clean domain modeling and migrations
+      - Shipped React and Next.js web apps and React Native mobile clients sharing types and contracts with the backend
+      - Implemented Node.js services and integrations alongside the Laravel core
+      - Owned the full stack end-to-end — architecture, API design, testing, and deployment
   - position: Full-Stack Developer
     company: Victoria Commercial
     period: 2018 - 2022
@@ -67,13 +77,13 @@ skills:
     items:
       - name: PL/SQL
         highlight: true
-      - name: Oracle APEX
-        highlight: true
       - name: Oracle Database
+        highlight: true
+      - name: PostgreSQL
         highlight: true
       - name: Stored Procedures & Triggers
       - name: SQL Tuning & Indexing
-      - name: Oracle REST Data Services
+      - name: Database Modeling
   - category: Web Development
     items:
       - Vue.js
@@ -83,6 +93,7 @@ skills:
       - Tailwind CSS
   - category: Mobile App Dev
     items:
+      - React Native
       - Flutter
       - Dart
       - Firebase
@@ -130,8 +141,11 @@ projects:
   - name: Next.js Analytics & Operations Dashboard
     description: Production Next.js dashboard (App Router, RSC, ISR) with edge-cached data views, role-based access, and a typed component library. Cut initial load to sub-second and unified reporting across teams.
     period: 2023 - 2025
-  - name: Oracle APEX Enterprise Module
-    description: Internal enterprise application on Oracle APEX with PL/SQL business logic, complex reporting, and tuned Oracle DB queries powering high-volume transactional workflows.
+  - name: Oracle/React Full-Stack Module (Enterprise Banking)
+    description: Full-stack module bridging an Oracle database layer (PL/SQL packages, tuned queries) with a React.js frontend through Node.js APIs — secure, auditable, and built for high-volume transactional workflows.
+    period: 2026 - 2027
+  - name: Laravel + React Native Product Suite
+    description: Full-stack product with a Laravel/PHP backend serving React/Next.js web clients and a React Native mobile app, sharing typed contracts across tiers.
     period: 2025
   - name: Victoria Commercial — Inventory & Mobile
     description: Inventory system with an Angular dashboard and a customer-facing Flutter mobile application.
