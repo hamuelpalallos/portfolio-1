@@ -3,10 +3,13 @@
 
 <template>
   <div>
-    <UContainer class="sm:border-x border-default pt-10">
-      <AppHeader :links="navLinks" />
+    <UContainer class="sm:border-x border-default pt-10 print:border-0 print:pt-0">
+      <AppHeader
+        class="print:hidden"
+        :links="navLinks"
+      />
       <slot />
-      <AppFooter />
+      <AppFooter class="print:hidden" />
     </UContainer>
   </div>
 </template>

@@ -1,8 +1,151 @@
 title: Curriculum Vitae
-description: My professional experience, education, and skills at a glance.
+description: Senior Software Engineer specializing in React/Next.js, full-stack web & mobile, and Oracle enterprise development.
 links:
-  - label: Download PDF
-    icon: i-lucide-download
-    to: /cv.pdf
-    target: _blank
+  - label: Print
+    icon: i-lucide-printer
     color: neutral
+profile:
+  name: Hamuel Palallos
+  title: Senior Software Engineer · React/Next.js & Oracle Developer
+  avatar:
+    src: /profile.jpg
+    alt: Hamuel Palallos
+  contact:
+    phone: "+63 997 734 5075"
+    email: hamuelpalallos@gmail.com
+    github: github.com/hamuelpalallos
+    linkedin: linkedin.com/in/hamuelpalallos
+    location: San Miguel, Bacong, Neg. Or. PH
+summary: Senior Software Engineer with a dual specialty in modern web platforms (React, Next.js, Nuxt) and enterprise Oracle development (PL/SQL, Oracle APEX, Oracle DB). I architect high-performance frontends, design resilient backend systems, and build data-intensive enterprise applications — bridging the gap between modern UX and mission-critical enterprise data.
+experience:
+  - position: Senior Software Engineer
+    company: Tripket PH
+    period: 2022 - 2026
+    location: Mat's Place, Hibbard Ave, Dumaguete, Neg. Or.
+    achievements:
+      - Architected React and Next.js dashboards with SSR/ISR, streaming, and edge caching for sub-second loads
+      - Built a reusable component design system in React (typed, themeable) adopted across product teams
+      - Designed scalable Nuxt/Vue architectures for landing pages and marketing sites with strong SEO
+      - Developed cross-platform mobile apps with Flutter backed by Firebase real-time data
+      - Owned backend performance and database design (PostgreSQL/MySQL) for reliability at scale
+      - Established coding, security, and deployment standards; mentored engineers on React/Next.js best practices
+  - position: Software Developer (Oracle & Enterprise Applications)
+    company: Asbir Tech
+    period: 2025 - Present
+    location: Philippines
+    description: Developing enterprise applications with a focus on Oracle database engineering and modern web frontends.
+    achievements:
+      - Engineered Oracle-backed enterprise modules using PL/SQL — stored procedures, packages, triggers, and tuned queries for high-volume transactional systems
+      - Built internal business applications on Oracle APEX, delivering forms, reports, and dashboards rapidly
+      - Modeled and optimized Oracle DB schemas; improved query performance through indexing, partitioning, and explain-plan analysis
+      - Bridged Oracle data layers with modern React/Next.js frontends via REST APIs
+  - position: Full-Stack Developer
+    company: Victoria Commercial
+    period: 2018 - 2022
+    location: Philippines
+    description: Inventory management platform and customer-facing mobile app.
+    achievements:
+      - Built an inventory dashboard in Angular and a customer mobile app in Flutter
+      - Delivered the full stack end-to-end — architecture, API design, and deployment
+education:
+  - degree: Bachelor of Information Technology
+    institution: Silliman University
+    period: 2017 - 2023
+skills:
+  - category: React / Next.js
+    items:
+      - name: React
+        highlight: true
+      - name: Next.js (App Router, SSR/ISR, RSC)
+        highlight: true
+      - name: TypeScript
+        highlight: true
+      - name: React Query / Server Components
+      - name: Tailwind CSS
+      - name: Vite
+  - category: Oracle & Enterprise
+    items:
+      - name: PL/SQL
+        highlight: true
+      - name: Oracle APEX
+        highlight: true
+      - name: Oracle Database
+        highlight: true
+      - name: Stored Procedures & Triggers
+      - name: SQL Tuning & Indexing
+      - name: Oracle REST Data Services
+  - category: Web Development
+    items:
+      - Vue.js
+      - Nuxt.js
+      - Angular
+      - Node.js
+      - Tailwind CSS
+  - category: Mobile App Dev
+    items:
+      - Flutter
+      - Dart
+      - Firebase
+  - category: Backend & Databases
+    items:
+      - Laravel (TALL Stack)
+      - PHP
+      - Node.js
+      - MySQL
+      - PostgreSQL
+      - Oracle DB
+      - MongoDB
+      - REST APIs
+  - category: Cloud & DevOps
+    items:
+      - Google Cloud
+      - AWS
+      - Azure
+      - Appwrite
+      - PM2
+      - Docker
+  - category: Languages
+    items:
+      - TypeScript
+      - JavaScript
+      - PL/SQL
+      - PHP
+      - Dart
+      - C#
+      - Java
+      - Python
+      - C / C++
+  - category: Tooling & Practices
+    items:
+      - System Design & Architecture
+      - Testing & Debugging
+      - CI/CD
+      - Unity Engine
+      - Zapier
+languages:
+  - English
+  - Tagalog
+  - Cebuano
+projects:
+  - name: Next.js Analytics & Operations Dashboard
+    description: Production Next.js dashboard (App Router, RSC, ISR) with edge-cached data views, role-based access, and a typed component library. Cut initial load to sub-second and unified reporting across teams.
+    period: 2023 - 2025
+  - name: Oracle APEX Enterprise Module
+    description: Internal enterprise application on Oracle APEX with PL/SQL business logic, complex reporting, and tuned Oracle DB queries powering high-volume transactional workflows.
+    period: 2025
+  - name: Victoria Commercial — Inventory & Mobile
+    description: Inventory system with an Angular dashboard and a customer-facing Flutter mobile application.
+    period: 2018 - 2022
+  - name: Miss Silliman Tabulation 2019
+    description: Real-time tabulation system built on Laravel for Miss SU 2019.
+    period: 2019
+  - name: Unity Game Development
+    description: Games built with C# and Azure-hosted data.
+    period: 2018 - 2022
+references:
+  - name: Allan Benette Uy Matiao
+    position: Co-Founder / CEO, Tripket PH
+    contact: "+63 976 341 2190"
+  - name: Nanet Bacla-an
+    position: HR, Tripket PH
+    contact: "+63 981 209 5038"

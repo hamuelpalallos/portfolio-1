@@ -8,7 +8,7 @@ hero:
     - label: "View my work"
       to: /projects
       color: "primary"
-      v
+      variant: "subtle"
     - label: "Available for new projects"
       to: "mailto:hamuelpalallos@gmail.com"
       color: "neutral"
@@ -80,25 +80,61 @@ blog:
   description: "Thoughts on building software, lessons from production, and the tech I use."
 faq:
   title: Frequently Asked Questions
-  description: Answers to common questions about my technical expertise and working style.
+  description: Answers to common questions about my background, skills, and how I work.
   categories:
     - title: Skills & Tech Stack
       questions:
         - label: What technologies do you work with?
           content: |
-            I work primarily with modern web and mobile technologies. My core stack includes Vue.js and Nuxt.js for frontend, Flutter and Dart for cross-platform mobile apps, Laravel/PHP for backend APIs, and MySQL/MongoDB for databases. I also have experience with TypeScript, Tailwind CSS, Firebase, and cloud platforms like Azure. I'm always exploring new tools and frameworks to solve problems efficiently.
+            My primary stack includes **TypeScript/JavaScript** with **Vue.js/Nuxt.js** for web applications, and **Flutter/Dart** for cross-platform mobile apps. On the backend, I work with **Node.js**, **Laravel (TALL Stack)**, and **PHP**. For cloud infrastructure, I use **Firebase**, **Google Cloud**, **AWS**, and **Azure**. I also have experience with **C, C++, C#** (Unity game development), **Java**, **Python**, and tools like **Zapier** for automation. I work extensively with both **SQL and NoSQL databases**, REST APIs, and real-time data systems.
+        - label: Do you specialize in frontend or backend?
+          content: |
+            I'm a full-stack developer, but my strongest expertise is in building scalable frontend architectures with **Vue.js/Nuxt.js** and cross-platform mobile apps with **Flutter**. That said, I'm equally comfortable designing backend systems with Laravel or Node.js, optimizing database structures, and setting up cloud infrastructure. I prefer owning the full picture from architecture to deployment.
+        - label: What tools do you use day-to-day?
+          content: |
+            My daily toolkit includes **VS Code** as my primary editor, **Claude Code** for AI-assisted development (with custom skills, dispatch, hooks, and MCP plugins), **bun** as my JavaScript runtime and package manager, and **Git** for version control. For backend and hosting, I use **Firebase** and my own **self-hosted infrastructure** (PostgreSQL, deployment services, DNS, automated backups). For deployment, I work with **Appwrite**, **PM2** for process management, and **Nitro/Nuxt** for SSR. I also use **Figma** for design collaboration and **Linear** or GitHub Issues for project tracking.
+        - label: Which databases and APIs are you comfortable with?
+          content: |
+            I work with both **SQL** (MySQL, PostgreSQL) and **NoSQL** (MongoDB, Firestore) databases, choosing the right tool based on access patterns and scale. On the API side, I design and consume **REST APIs** regularly, implement **real-time data systems** (WebSockets / Firestore listeners), and integrate third-party services via webhooks and automation tools like **Zapier**.
     - title: Experience & Projects
       questions:
         - label: What types of projects have you worked on?
           content: |
-            I've worked on diverse projects ranging from real-time tabulation systems for events to inventory management platforms and mobile applications. My experience includes building dashboards for data visualization, creating full-stack web applications, developing mobile apps with Flutter, and implementing secure backend systems. I particularly enjoy projects that require solving complex problems with clean, scalable solutions.
+            I've worked on diverse projects including **real-time tabulation systems** for pageants and events, **inventory management platforms** with Angular dashboards, **cross-platform mobile apps** built with Flutter, and **scalable web dashboards** for data visualization. I also have a background in **game development with Unity** (C#, Azure-hosted data) and have shipped production web apps end-to-end — from database design to frontend polish.
+        - label: Where have you worked, and what was your role?
+          content: |
+            I'm currently a **Senior Software Engineer at Tripket PH** (2022–present), where I architect and ship full-stack solutions across web, mobile, and cloud — building Vue.js/Nuxt.js dashboards, Flutter mobile apps with Firebase, and the backend systems that power them. I also work as a **Software Developer at Asbir Tech** (2025), focused on enterprise applications and backend systems with an emphasis on performance, scalability, and maintainability.
+        - label: What's a project you're particularly proud of?
+          content: |
+            The **Miss Silliman Tabulation 2019** system stands out — a real-time results platform built on **Laravel** that handled live scoring for a major university pageant. It taught me a lot about correctness under pressure, real-time data flow, and building something that simply cannot fail on the night. More recently, the dashboards and mobile apps I've built at **Tripket PH** — architected from scratch with Vue.js and Flutter — are the work I'm most proud of at scale.
+        - label: What's your educational background?
+          content: |
+            I hold a **Bachelor of Information Technology** from **Silliman University** (2017–2023), where I focused on software engineering, algorithms, and web development. I've been building production software since 2018, starting with Unity game development and growing into full-stack web and mobile engineering.
     - title: AI, Self-Hosting & Tinkering
       questions:
-        - label: What tools do you use day-to-day?
+        - label: How do you use AI in your workflow?
           content: |
-            My daily toolkit includes VS Code for development, Git for version control, and Docker for containerization. I use various AI tools to enhance productivity while maintaining code quality. I'm also big on self-hosting and have experience setting up private infrastructure for development and production environments. I'm constantly tinkering with new technologies to stay current and find better ways to build software.
+            AI is a core part of how I build today. I use **Claude Code** heavily — not just for code generation, but with **custom skills, dispatch patterns, hooks, and MCP plugins** that let me automate repetitive work, enforce project conventions, and ship faster without sacrificing quality. I treat AI as a force multiplier for architecture, refactoring, and review, while keeping a human in the loop for the decisions that matter.
+        - label: Are you into self-hosting?
+          content: |
+            Very much so. I run my own **self-hosted infrastructure** — PostgreSQL, deployment services, DNS, and automated backups — and I develop inside a **code-server environment deployed as a Coolify resource**, tunneled through **Cloudflare**. I've written about the debugging journeys that come with that setup (HMR over tunnels, edge-cache gotchas), and self-hosting is how I stay sharp on networking, DevOps, and infrastructure.
+        - label: What are you tinkering with lately?
+          content: |
+            I'm always experimenting. Recently that's meant tuning **Nuxt HMR over Cloudflare Tunnels**, exploring **AI-assisted development workflows** (skills, hooks, MCP), and refining my self-hosted dev environment. I also keep an eye on new frameworks and run small side projects to pressure-test ideas before bringing them into production work.
+        - label: Do you write about any of this?
+          content: |
+            Yes — I blog about the things I learn in production and in the trenches of self-hosting. Recent posts cover **deploying Nuxt to production**, **why I chose Vue.js and Nuxt**, **my journey into Flutter**, and **fixing Nuxt HMR in a Coolify code-server**. If it's a problem I had to debug end-to-end, I try to write it up so the next person doesn't have to.
     - title: Working With Me
       questions:
         - label: What's your approach to collaboration?
           content: |
-            I believe in transparent communication and collaborative problem-solving. I thrive in environments where technical excellence is valued and there's room for continuous learning. I'm comfortable working independently or as part of a team, and I always aim to write clean, maintainable code that others can understand and build upon. I'm proactive about sharing knowledge and helping teammates grow.
+            I believe in **transparent communication** and **collaborative problem-solving**. I thrive in environments where technical excellence is valued and there's room for continuous learning. I'm comfortable working independently or as part of a team, and I always aim to write **clean, maintainable code** that others can understand and build upon. I'm proactive about sharing knowledge and helping teammates grow.
+        - label: Are you available for new projects?
+          content: |
+            Yes — I'm **open to new projects** and engagements, especially full-stack web and mobile work where I can own architecture through delivery. The best way to start is a quick intro over email; I'll get back to you and we can scope whether I'm the right fit.
+        - label: How do you handle code quality and best practices?
+          content: |
+            I take quality seriously: **clean architecture**, sensible abstractions, linting and type-checking in CI, security and deployment best practices, and performance/SEO work where it matters. I treat code review as a first-class part of the process and prefer to leave codebases healthier than I found them.
+        - label: What's the best way to reach you?
+          content: |
+            Email is the most reliable: **hamuelpalallos@gmail.com**. You can also find me on **GitHub** (`hamuelpalallos`) and **LinkedIn** (`in/hamuelpalallos`). For a real-time conversation, send me a note and we'll set up a call.

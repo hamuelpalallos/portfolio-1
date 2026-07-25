@@ -23,3 +23,106 @@
     background-color: #474747;
   }
 }
+
+/*
+ * Print stylesheet for the CV page.
+ *
+ * Goal: when the user clicks "Print" on /cv, only the CV document is visible,
+ * formatted for A4 paper. Everything else (header nav, footer, the page
+ * toolbar with the Print button, the UPageHeader title block) is hidden.
+ *
+ * The printable element is `<article id="cv-document">` rendered by
+ * `app/components/Cv/Document.vue`. It's wrapped in `.cv-sheet` on the page,
+ * which provides the "paper" surface (max width, padding, white-ish bg).
+ *
+ * The strategy:
+ *  1. Hide the app chrome (header/footer) via `print:hidden` in
+ *     `app/layouts/default.vue`.
+ *  2. Here, hide the toolbar / page header on the CV page and lift the CV
+ *     document out of the layout container so it fills the page.
+ *  3. Force a print-friendly color scheme: the CV is rendered in light mode
+ *     regardless of the user's dark-mode preference, so colors/contrast are
+ *     deterministic on paper.
+ */
+@media print {
+  /* === Global page setup === */
+  html, body {
+    background: #ffffff !important;
+  }
+
+  /* Strip the layout container's borders/padding/width for print. */
+  .print\:hidden,
+  .cv-page__toolbar,
+  .cv-page__header {
+    display: none !important;
+  }
+
+  /* The CV page wrapper: remove its padding so the sheet can fill the page. */
+  .cv-page {
+    padding: 0 !important;
+    max-width: none !important;
+  }
+
+  /* Reset the outer UContainer width/padding for the printable area. */
+  .cv-page.cv-page ~ * ,
+  .cv-page {
+    margin: 0 !important;
+  }
+
+  /* The "paper" sheet: A4-ish proportions, sensible print margins. */
+  .cv-sheet {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #1f2937 !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    max-width: none !important;
+  }
+
+  /*
+   * Force the CV document (and its scoped children) into a deterministic
+   * light palette on paper. We override the Nuxt UI CSS custom properties
+   * that the Cv* components read via var(...). Dark-mode tokens would
+   * otherwise print as near-black backgrounds.
+   */
+  #cv-document,
+  #cv-document * {
+    --ui-text-highlighted: #111827;
+    --ui-text-toned: #374151;
+    --ui-text-muted: #6b7280;
+    --ui-text-dimmed: #9ca3af;
+    --ui-bg-default: #ffffff;
+    --ui-bg-muted: #ffffff;
+    --ui-bg-elevated: #ffffff;
+    --ui-border-default: #d6d8db;
+    --ui-border-accented: #cfd2d6;
+    --ui-border-muted: #d6d8db;
+    --ui-color-primary-500: #b45309; /* amber-700 — stronger for print contrast */
+  }
+
+  /* Ensure links/contacts print in body color, not primary blue. */
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  /* Keep section headings with their content, and avoid breaking inside
+     experience/education/reference entries across pages. */
+  .cv-section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .cv-experience__item,
+  .cv-document__edu-item,
+  .cv-references__item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Default the page size to A4 with reasonable margins. */
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+}

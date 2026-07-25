@@ -95,12 +95,71 @@ export default defineContentConfig({
         author: createAuthorSchema()
       })
     }),
+    cv: defineCollection({
+      type: 'page',
+      source: 'cv.yml',
+      schema: z.object({
+        links: z.array(createButtonSchema()),
+        profile: z.object({
+          name: z.string(),
+          title: z.string(),
+          avatar: createImageSchema().optional(),
+          contact: z.object({
+            phone: z.string().optional(),
+            email: z.string().optional(),
+            website: z.string().optional(),
+            github: z.string().optional(),
+            linkedin: z.string().optional(),
+            location: z.string().optional()
+          })
+        }),
+        summary: z.string(),
+        highlights: z.array(z.string()).optional(),
+        metrics: z.array(z.object({
+          label: z.string(),
+          value: z.string()
+        })).optional(),
+        experience: z.array(z.object({
+          position: z.string(),
+          company: z.string(),
+          period: z.string(),
+          location: z.string().optional(),
+          description: z.string().optional(),
+          achievements: z.array(z.string()).optional()
+        })),
+        education: z.array(z.object({
+          degree: z.string(),
+          institution: z.string(),
+          period: z.string().optional()
+        })),
+        skills: z.array(z.object({
+          category: z.string(),
+          items: z.array(z.union([
+            z.string(),
+            z.object({
+              name: z.string(),
+              highlight: z.boolean().optional()
+            })
+          ]))
+        })),
+        languages: z.array(z.string()).optional(),
+        projects: z.array(z.object({
+          name: z.string(),
+          description: z.string().optional(),
+          period: z.string().optional()
+        })).optional(),
+        references: z.array(z.object({
+          name: z.string(),
+          position: z.string().optional(),
+          contact: z.string().optional()
+        })).optional()
+      })
+    }),
     pages: defineCollection({
       type: 'page',
       source: [
         { include: 'projects.yml' },
-        { include: 'blog.yml' },
-        { include: 'cv.yml' }
+        { include: 'blog.yml' }
       ],
       schema: z.object({
         links: z.array(createButtonSchema())
