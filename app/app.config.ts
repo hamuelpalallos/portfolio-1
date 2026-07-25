@@ -11,12 +11,12 @@ export default defineAppConfig({
       alt: 'My profile picture'
     },
     meetingLink: 'https://cal.com/',
-    email: 'hamuel@softwarelabs.dev',
+    email: 'hamuelpalallos@gmail.com',
     available: true
   },
   ui: {
     colors: {
-      primary: 'blue',
+      primary: 'amber',
       neutral: 'neutral'
     },
     pageHero: {
@@ -42,7 +42,7 @@ export default defineAppConfig({
       'aria-label': 'LinkedIn'
     }, {
       'icon': 'i-lucide-mail',
-      'to': 'mailto:hamuel@softwarelabs.dev',
+      'to': 'mailto:hamuelpalallos@gmail.com',
       'aria-label': 'Email'
     }]
   }

@@ -1,15 +1,16 @@
 seo:
   title: "Hamuel Palallos - Senior Software Engineer"
   description: "I build scalable full-stack solutions with modern web and mobile technologies. Based in the Philippines, driving innovation through code and architecture."
-title: "Hey, I'm Hamuel Palallos Senior Software Engineer"
+title: "Hey, I'm Ham 😎 - Your company's future FullStack Engineer 🚀"
 description: "I build scalable full-stack solutions with modern web and mobile technologies. Based in the Philippines, driving innovation through code and architecture."
 hero:
   links:
     - label: "View my work"
       to: /projects
       color: "primary"
-    - label: "Available for projects"
-      to: "mailto:hamuel@softwarelabs.dev"
+      v
+    - label: "Available for new projects"
+      to: "mailto:hamuelpalallos@gmail.com"
       color: "neutral"
   images:
     - src: /hero/random-1.avif

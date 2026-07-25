@@ -21,7 +21,7 @@ Replace all placeholder (Nuxt UI template / "Emma Thompson") values across the p
 
 ### 1. Global profile + footer — `app/app.config.ts`
 - `global.picture`: keep dark/light as the existing Unsplash photo (source site uses `/profile.jpg` which is local-only; the current Unsplash URL is acceptable as a placeholder — note this as an open question below).
-- `global.email`: → `hamuel@softwarelabs.dev` (the source obfuscates via Cloudflare email protection; use the domain email. Confirm exact address — see Open Questions).
+- `global.email`: → `hamuelpalallos@gmail.com` (the source obfuscates via Cloudflare email protection; use the domain email. Confirm exact address — see Open Questions).
 - `global.meetingLink`: keep `https://cal.com/` or update to Hamuel's actual cal.com slug (unknown — leave as-is unless provided).
 - `global.available`: `true`.
 - `footer.links`: replace Nuxt social links with:
@@ -189,7 +189,7 @@ Manual: `bun run dev` → verify `/`, `/projects`, `/about`, `/speaking`, `/blog
 - **OG images** (`zeroRuntime`): CV page should define a route for OG if desired, but not required for MVP.
 
 ## Open Questions (must resolve before/early in implementation)
-1. **Email address** — source obfuscates it. Need Hamuel's actual email (e.g. `hamuel@softwarelabs.dev`?). Used in `app.config.ts`, footer, hero, contact links.
+1. **Email address** — source obfuscates it. Need Hamuel's actual email (e.g. `hamuelpalallos@gmail.com`?). Used in `app.config.ts`, footer, hero, contact links.
 2. **Profile picture** — source uses local `/profile.jpg`. Keep current Unsplash placeholder, or supply a real URL/asset? (`/public/profile.jpg`?)
 3. **Blog post bodies** — source only exposes summaries. Write concise draft bodies, or will user supply full content?
 4. **FAQ categories 2 & 4 ("Experience & Projects", "Working With Me")** — no answers scraped. Derive from `/about`, or user supplies?
