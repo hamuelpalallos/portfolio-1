@@ -19,11 +19,11 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
-  content: {
-    experimental: {
-      sqliteConnector: 'native'
-    }
-  },
+  // content: {
+  //   experimental: {
+  //     sqliteConnector: 'native'
+  //   }
+  // },
 
   devServer: {
     host: '0.0.0.0', // bind to all interfaces inside the container, not just loopback
@@ -43,12 +43,11 @@ export default defineNuxtConfig({
 
   vite: {
     server: {
-      // host: '0.0.0.0',
       strictPort: true,
       hmr: {
         protocol: 'wss', // tunnel terminates TLS, so client connects over wss
         host: 'nuxt-dev.softwarelabs.dev', // public hostname the browser actually loads from
-        clientPort: 443 // public port (Cloudflare always fronts on 443)
+        port: 443 // public port (Cloudflare always fronts on 443)
       },
       allowedHosts: ['nuxt-dev.softwarelabs.dev'] // Vite 5.4+/6 reject unrecognized Host headers by default
     }
