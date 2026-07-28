@@ -24,6 +24,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2026-06-30',
 
   nitro: {
+    preset: 'bun',
     prerender: {
       routes: [
         '/'
@@ -44,7 +45,7 @@ export default defineNuxtConfig({
       // Cloudflare Tunnel at https://nuxt-dev.softwarelabs.dev (TLS terminated
       // at the edge on 443, dev server itself is plain HTTP on 0.0.0.0:3000).
       // See content/blog/fixing-nuxt-hmr-coolify-code-server.md for the journey.
-      host: '0.0.0.0',
+      // host: '0.0.0.0',
       // `strictPort: true` so the listening port is deterministic. Per Vite docs
       // this also silences the HMR WebSocket "direct connection fallback" error.
       strictPort: true,
